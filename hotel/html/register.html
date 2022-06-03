@@ -1,0 +1,382 @@
+<div id="page-container"
+     class="d-conditional bg-img bg-image-cover bg-hotel position-fixed top-0 w-100 h-100"
+     ng-change-state="">
+  
+  <!-- Register container -->
+  <div class="container mt-3">
+
+    <!-- Row -->
+    <div class="row justify-content-center px-2 py-5">
+      
+      <!-- Registration -->
+      <form id="register-form"
+            class="py-4 px-3 bg-beige"
+            style="max-width:650px;"
+            action="#">
+
+        <!-- Logo -->
+        <div id="logo">
+          <img src="./media/image/logo/logo.jpg" 
+               class="w-25" 
+               alt="logo">
+        </div>
+
+        <!-- Title-->
+        <h2 class="my-3 w-100 text-center">
+          <span><i class="fas fa-user"></i></span>
+          <span class="ms-2">
+            {{lang.data.register | capitalize}}
+          </span>
+        </h2>
+        <hr>
+
+        <!-- User prefix name -->
+        <div id="user-prefix-name"
+             class="input-item input-group input-row mb-3">
+        
+          <!-- Label -->
+          <div class="col-12 col-md-6 text-start text-md-end px-0 px-md-3">
+            <label for="prefix-name" 
+                   class="col-form-label">
+              {{lang.data.prefixName | capitalize}}:
+            </label>
+          </div>
+        
+          <!-- Input user prefix name -->
+          <input id="prefix-name" 
+                 type="text" 
+                 class="form-control pe-4 col-12 col-md-6"
+                 ng-model="model.prefixName" 
+                 ng-change="methods.changed()" 
+                 spellcheck="false" 
+                 autocomplete="off"
+                 placeholder="{{lang.data.prefixName}}"
+                 maxlength="20">
+        </div>
+
+        <!-- User first name -->
+        <div id="user-first-name" 
+             class="input-item input-group input-row mb-3">
+        
+          <!-- Label -->
+          <div class="col-12 col-md-6 text-start text-md-end px-0 px-md-3">
+            <label for="first-name" 
+                   class="col-form-label">
+              <span class="text-danger fw-bold">*</span>
+              <span>{{lang.data.firstName | capitalize}}:</span>
+            </label>
+          </div>
+        
+          <!-- Input user first name -->
+          <input id="first-name" 
+                 type="text" 
+                 class="form-control pe-4 col-12 col-md-6"
+                 ng-model="model.firstName" 
+                 ng-change="methods.changed()" 
+                 spellcheck="false" 
+                 autocomplete="off"
+                 placeholder="{{lang.data.firstName}}" 
+                 required
+                 maxlength="50">
+        </div>
+
+        <!-- User middle name -->
+        <div id="user-middle-name"
+             class="input-item input-group input-row mb-3">
+        
+          <!-- Label -->
+          <div class="col-12 col-md-6 text-start text-md-end px-0 px-md-3">
+            <label for="middle-name" 
+                   class="col-form-label">
+              {{lang.data.middleName | capitalize}}:
+            </label>
+          </div>
+        
+          <!-- Input user middle name -->
+          <input id="middle-name" 
+                 type="text" 
+                 class="form-control pe-4 col-12 col-md-6" 
+                 ng-model="model.middleName" 
+                 ng-change="methods.changed()" 
+                 spellcheck="false" 
+                 autocomplete="off"
+                 placeholder="{{lang.data.middleName}}"
+                 maxlength="50">
+        </div>
+
+        <!-- User last name -->
+        <div id="user-last-name"
+             class="input-item input-group input-row mb-3">
+        
+          <!-- Label -->
+          <div class="col-12 col-md-6 text-start text-md-end px-0 px-md-3">
+            <label for="last-name" 
+                   class="col-form-label">
+              <span class="text-danger fw-bold">*</span>
+              <span>{{lang.data.lastName | capitalize}}:</span>
+            </label>
+          </div>
+        
+          <!-- Input user last name -->
+          <input id="last-name" 
+                 type="text" 
+                 class="form-control pe-4 col-12 col-md-6" 
+                 ng-model="model.lastName" 
+                 ng-change="methods.changed()" 
+                 spellcheck="false" 
+                 autocomplete="off"
+                 placeholder="{{lang.data.lastName}}" 
+                 required
+                 maxlength="50">
+        </div>
+
+        <!-- User postfix name -->
+        <div id="user-postfix-name"
+             class="input-item input-group input-row mb-3">
+        
+          <!-- Label -->
+          <div class="col-12 col-md-6 text-start text-md-end px-0 px-md-3">
+            <label for="postfix-name" 
+                   class="col-form-label">
+              {{lang.data.postfix | capitalize}}:
+            </label>
+          </div>
+        
+          <!-- Input user postfix name -->
+          <input id="postfix-name" 
+                 type="text" 
+                 class="form-control pe-4 col-12 col-md-6"
+                 ng-model="model.postfixName" 
+                 ng-change="methods.changed()"  
+                 spellcheck="false" 
+                 autocomplete="off"
+                 placeholder="{{lang.data.postfix}}"
+                 maxlength="20">
+        </div>
+        <hr>
+
+        <!-- User gender -->
+        <div id="user-gender-type"
+             class="input-item input-group input-row mb-3">
+        
+          <!-- Label -->
+          <div class="col-12 col-md-6 text-start text-md-end px-0 px-md-3">
+            <label class="col-form-label">
+              <span class="text-danger fw-bold">*</span>
+              <span>{{lang.data.gender | capitalize}}:</span>
+            </label>
+          </div>
+        
+          <!-- checkbox -->
+          <div class="col-auto mt-2">
+            <input class="form-check-input radio-gender" 
+                   type="radio" 
+                   id="user-mail"  
+                   name="radioBtn">
+            <label class="form-check-label ms-1" 
+                   for="user-mail">
+              {{lang.data.man}}
+            </label>
+          </div>
+        
+          <!-- checkbox -->
+          <div class="col-auto mt-2 ps-3">
+            <input class="form-check-input radio-gender" 
+                   type="radio" 
+                   id="user-femail"          
+                   name="radioBtn">
+            <label class="form-check-label ms-1" 
+                   for="user-femail">
+              {{lang.data.woman}}
+            </label>
+          </div>
+        </div>
+
+        <!-- User birthday -->
+        <div class="input-item input-group input-row mb-3">
+        
+          <!-- Label -->
+          <div class="col-12 col-md-6 text-start text-md-end px-0 px-md-3">
+            <label for="user-birthday" 
+                   class="col-form-label">
+              {{lang.data.born | capitalize}}:
+            </label>
+          </div>
+        
+          <!-- Input birthday -->
+          <input id="user-birthday" 
+                 type="date" 
+                 class="form-control pe-4 col-12 col-md-6"
+                 ng-model="model.birthday" 
+                 ng-change="methods.changed()" 
+                 spellcheck="false" 
+                 autocomplete="off">
+        </div>
+
+        <!-- Email -->
+        <div class="input-item input-group input-row mb-3">
+        
+          <!-- Label -->
+          <div class="col-12 col-md-6 text-start text-md-end px-0 px-md-3">
+            <label for="user-email" 
+                   class="col-form-label">
+              <span class="text-danger fw-bold">*</span>
+              <span>EMAIL:</span>
+            </label>
+          </div>
+        
+          <!-- Input email -->
+          <input id="user-email" 
+                 type="text" 
+                 class="form-control pe-4 col-12 col-md-6"
+                 ng-model="model.userEmail" 
+                 ng-change="methods.changed()" 
+                 spellcheck="false" 
+                 autocomplete="off"
+                 placeholder="email" 
+                 required
+                 maxlength="50">
+        </div>
+        <hr>
+
+        <!-- User login name -->
+        <div class="input-item input-group input-row mb-3">
+        
+          <!-- Label -->
+          <div class="col-12 col-md-6 text-start text-md-end px-0 px-md-3">
+            <label for="login-name" 
+                   class="col-form-label">
+              <span class="text-danger fw-bold">*</span>
+              <span>{{lang.data.username | capitalize}}:</span>
+            </label>
+          </div>
+        
+          <!-- Input user login name -->
+          <input id="login-name" 
+                 type="text" 
+                 class="form-control pe-4 col-12 col-md-6"
+                 ng-model="model.loginName" 
+                 ng-change="methods.changed()" 
+                 spellcheck="false" 
+                 autocomplete="off"
+                 placeholder="{{lang.data.username}}" 
+                 required
+                 maxlength="20">
+        </div>
+
+        <!-- Password -->
+        <fieldset>
+        
+          <!-- Password -->
+          <div class="input-item input-group input-row mb-2">
+          
+            <!-- Label -->
+            <div class="col-12 col-md-6 text-start text-md-end px-0 px-md-3">
+            <label for="password" 
+                   class="col-form-label">
+              <span class="text-danger fw-bold">*</span>
+              <span>{{lang.data.password | capitalize}}:</span>
+            </label>
+            </div>
+          
+            <!-- Input password -->
+            <input id="password" 
+                   type="text" 
+                   class="form-control pe-4 input-password col-12 col-md-6" 
+                   ng-model="model.password1" 
+                   ng-change="methods.changed()"
+                   spellcheck="false" 
+                   autocomplete="off"
+                   placeholder="{{lang.data.password}}" 
+                   required
+                   maxlength="20">
+          </div>
+        
+          <!-- Password again -->
+          <div class="input-item input-group input-row mb-2">
+          
+            <!-- Label -->
+            <div class="col-12 col-md-6 text-start text-md-end px-0 px-md-3">
+              <label for="password-again" 
+                     class="col-form-label">
+                <span class="text-danger fw-bold">*</span>
+                <span>{{lang.data.passwordAgain | capitalize}}:</span>
+              </label>
+            </div>
+          
+            <!-- Input password -->
+            <input id="password-again" 
+                   type="text" 
+                   class="form-control pe-4 input-password col-12 col-md-6"
+                   ng-model="model.password2" 
+                   ng-change="methods.changed()" 
+                   spellcheck="false" 
+                   autocomplete="off"
+                   placeholder="{{lang.data.passwordAgain}}" 
+                   required
+                   maxlength="20">
+          </div>
+        
+          <!-- Show/Hide password -->
+          <div class="row mb-3">
+            <div class="col-6" ></div>
+            <div class="col-md-6">
+              <div class="form-check">
+                <input id="display-password" 
+                       class="form-check-input" 
+                       type="checkbox" 
+                       value=""
+                       ng-model="isChecked" 
+                       ng-change="methods.show(isChecked)">
+                <label class="form-check-label" 
+                       for="display-password">
+                  {{lang.data.displayPassword}}
+                </label>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+        <hr>
+        
+        <!-- Buttons -->
+        <div id="button-container" 
+             class="input-item btn-group mt-4 text-center w-100">
+        
+          <!-- Send button -->
+          <button id="send" 
+                  type="button"
+                  class="btn btn-primary mx-2 btn-enable-disable"
+                  ng-click="methods.registration()"
+                  >
+            {{lang.data.submit | capitalize}}
+          </button>
+        
+          <!-- Cancel button -->
+          <button id="cancel" 
+                  type="button" 
+                  class="btn btn-secondary mx-2"
+                  ng-click="methods.prevState()">
+            {{lang.data.cancel | capitalize}}
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="text-center position-fixed w-100 top-0">
+    <div class="container-fluid" 
+         ng-include src="'./html/nav-back.html'">
+    </div>
+  </header>
+
+  <!-- Message -->
+  <div id="message"
+       class="modal fade"
+       tabindex="-1" 
+       role="dialog" 
+       aria-labelledby="messageLabel" 
+       aria-hidden="true"
+       ng-include="'./html/message.html'">
+  </div>
+</div>
